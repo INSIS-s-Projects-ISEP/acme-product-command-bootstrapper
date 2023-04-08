@@ -37,5 +37,11 @@ public class ProductConsumer {
         }
         
     }
-    
+
+    @RabbitListener(queues = "#{rpcProductQueue.name}", ackMode = "MANUAL")
+    public String voltei(String instance, Channel channel, @Header(AmqpHeaders.DELIVERY_TAG) long tag) throws IOException{
+        channel.basicAck(tag, false);
+        return "That's my response!";
+    }
+
 }

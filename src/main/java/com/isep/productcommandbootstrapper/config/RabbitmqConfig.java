@@ -54,4 +54,20 @@ public class RabbitmqConfig {
         return BindingBuilder.bind(productCreatedQueue).to(productCreatedExchange);
     }
 
+    // Bootstrapper
+    @Bean
+    public FanoutExchange rpcProductExchange(){
+        return new FanoutExchange("rpc.product");
+    }
+
+    @Bean
+    public Queue rpcProductQueue(String instanceId){
+        return new Queue("rpc.product.product-command-bootstrapper", true, false, false);
+    }
+
+    @Bean
+    public Binding bindRpcProduct(FanoutExchange rpcProductExchange, Queue rpcProductQueue){
+        return BindingBuilder.bind(rpcProductQueue).to(rpcProductExchange);
+    }
+
 }
