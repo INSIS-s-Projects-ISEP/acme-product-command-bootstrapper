@@ -1,4 +1,4 @@
-package com.isep.ProductCommandBootstrapper;
+package com.isep.productcommandbootstrapper;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
