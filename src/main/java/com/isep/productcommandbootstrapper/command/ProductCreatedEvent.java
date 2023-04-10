@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductCreatedCommand {
+public class ProductCreatedEvent {
 
     @TargetAggregateIdentifier
     private Long productId;

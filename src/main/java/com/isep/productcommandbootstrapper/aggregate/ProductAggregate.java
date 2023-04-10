@@ -6,7 +6,7 @@ import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
 
-import com.isep.productcommandbootstrapper.command.ProductCreatedCommand;
+import com.isep.productcommandbootstrapper.command.ProductCreatedEvent;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -26,16 +26,16 @@ public class ProductAggregate {
     private String description;
     
     @CommandHandler
-    public ProductAggregate(ProductCreatedCommand productCreatedCommand){
-        AggregateLifecycle.apply(productCreatedCommand);
+    public ProductAggregate(ProductCreatedEvent productCreatedEvent){
+        AggregateLifecycle.apply(productCreatedEvent);
     }
 
     @EventSourcingHandler
-    public void on(ProductCreatedCommand productCreatedCommand){
-        this.sku = productCreatedCommand.getSku();
-        this.productId = productCreatedCommand.getProductId();
-        this.designation = productCreatedCommand.getDesignation();
-        this.description = productCreatedCommand.getDescription();
+    public void on(ProductCreatedEvent productCreatedEvent){
+        this.sku = productCreatedEvent.getSku();
+        this.productId = productCreatedEvent.getProductId();
+        this.designation = productCreatedEvent.getDesignation();
+        this.description = productCreatedEvent.getDescription();
     }
 
 }
