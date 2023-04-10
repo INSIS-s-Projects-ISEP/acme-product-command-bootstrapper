@@ -1,4 +1,4 @@
-package com.isep.ProductCommandBootstrapper;
+package com.isep.productcommandbootstrapper;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
