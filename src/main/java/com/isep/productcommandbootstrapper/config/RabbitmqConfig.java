@@ -13,12 +13,19 @@ import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 @Configuration
 public class RabbitmqConfig {
 
     @Bean
     public Jackson2JsonMessageConverter jackson2JsonMessageConverter() {
         return new Jackson2JsonMessageConverter();
+    }
+
+    @Bean
+    public ObjectMapper objectMapper(){
+        return new ObjectMapper();
     }
 
     @Bean
@@ -52,6 +59,38 @@ public class RabbitmqConfig {
     @Bean
     public Binding bindProductCreated(FanoutExchange productCreatedExchange, Queue productCreatedQueue){
         return BindingBuilder.bind(productCreatedQueue).to(productCreatedExchange);
+    }
+
+    // Product Updated
+    @Bean
+    public FanoutExchange productUpdatedExchange(){
+        return new FanoutExchange("product.product-updated");
+    }
+
+    @Bean
+    public Queue productUpdatedQueue(String instanceId){
+        return new Queue("product.product-updated.product-command." + instanceId, true, true, true);
+    }
+
+    @Bean
+    public Binding bindProductUpdated(FanoutExchange productUpdatedExchange, Queue productUpdatedQueue){
+        return BindingBuilder.bind(productUpdatedQueue).to(productUpdatedExchange);
+    }
+
+    // Product Deleted
+    @Bean
+    public FanoutExchange productDeletedExchange(){
+        return new FanoutExchange("product.product-deleted");
+    }
+
+    @Bean
+    public Queue productDeletedQueue(String instanceId){
+        return new Queue("product.product-deleted.product-command." + instanceId, true, true, true);
+    }
+
+    @Bean
+    public Binding bindProductDeleted(FanoutExchange productDeletedExchange, Queue productDeletedQueue){
+        return BindingBuilder.bind(productDeletedQueue).to(productDeletedExchange);
     }
 
     // Bootstrapper
