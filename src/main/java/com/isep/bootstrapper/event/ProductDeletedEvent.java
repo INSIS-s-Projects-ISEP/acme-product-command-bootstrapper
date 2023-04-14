@@ -1,4 +1,4 @@
-package com.isep.productcommandbootstrapper.command;
+package com.isep.bootstrapper.event;
 
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 

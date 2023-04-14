@@ -1,4 +1,4 @@
-package com.isep.productcommandbootstrapper.messaging;
+package com.isep.bootstrapper.messaging;
 
 import java.io.IOException;
 import java.util.List;
@@ -9,13 +9,13 @@ import org.springframework.amqp.support.AmqpHeaders;
 import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.stereotype.Component;
 
-import com.isep.productcommandbootstrapper.command.ProductCreatedEvent;
-import com.isep.productcommandbootstrapper.command.ProductDeletedEvent;
-import com.isep.productcommandbootstrapper.command.ProductUpdatedEvent;
-import com.isep.productcommandbootstrapper.dto.mapper.ProductMapper;
-import com.isep.productcommandbootstrapper.dto.message.ProductMessage;
-import com.isep.productcommandbootstrapper.model.Product;
-import com.isep.productcommandbootstrapper.repository.ProductRepository;
+import com.isep.bootstrapper.dto.mapper.ProductMapper;
+import com.isep.bootstrapper.dto.message.ProductMessage;
+import com.isep.bootstrapper.event.ProductCreatedEvent;
+import com.isep.bootstrapper.event.ProductDeletedEvent;
+import com.isep.bootstrapper.event.ProductUpdatedEvent;
+import com.isep.bootstrapper.model.Product;
+import com.isep.bootstrapper.repository.ProductRepository;
 import com.rabbitmq.client.Channel;
 
 import lombok.AllArgsConstructor;

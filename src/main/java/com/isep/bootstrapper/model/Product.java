@@ -1,18 +1,20 @@
-package com.isep.productcommandbootstrapper.command;
+package com.isep.bootstrapper.model;
 
-import org.axonframework.modelling.command.TargetAggregateIdentifier;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+@Entity
 @Getter @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProductUpdatedEvent {
+public class Product {
 
-    @TargetAggregateIdentifier
+    @Id
     private Long productId;
     private String sku;
     private String designation;

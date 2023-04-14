@@ -1,4 +1,4 @@
-package com.isep.productcommandbootstrapper.dto.message;
+package com.isep.bootstrapper.dto.message;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

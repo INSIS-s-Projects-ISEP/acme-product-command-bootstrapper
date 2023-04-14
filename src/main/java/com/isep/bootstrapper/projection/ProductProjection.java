@@ -1,13 +1,13 @@
-package com.isep.productcommandbootstrapper.projection;
+package com.isep.bootstrapper.projection;
 
 import org.axonframework.eventhandling.EventHandler;
 import org.springframework.stereotype.Component;
 
-import com.isep.productcommandbootstrapper.command.ProductCreatedEvent;
-import com.isep.productcommandbootstrapper.command.ProductDeletedEvent;
-import com.isep.productcommandbootstrapper.command.ProductUpdatedEvent;
-import com.isep.productcommandbootstrapper.model.Product;
-import com.isep.productcommandbootstrapper.repository.ProductRepository;
+import com.isep.bootstrapper.event.ProductCreatedEvent;
+import com.isep.bootstrapper.event.ProductDeletedEvent;
+import com.isep.bootstrapper.event.ProductUpdatedEvent;
+import com.isep.bootstrapper.model.Product;
+import com.isep.bootstrapper.repository.ProductRepository;
 
 import lombok.AllArgsConstructor;
 

@@ -1,4 +1,4 @@
-package com.isep.productcommandbootstrapper.config;
+package com.isep.bootstrapper.config;
 
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;

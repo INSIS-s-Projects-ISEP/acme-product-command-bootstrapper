@@ -1,4 +1,4 @@
-package com.isep.productcommandbootstrapper.aggregate;
+package com.isep.bootstrapper.aggregate;
 
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
@@ -6,9 +6,9 @@ import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.modelling.command.AggregateLifecycle;
 import org.axonframework.spring.stereotype.Aggregate;
 
-import com.isep.productcommandbootstrapper.command.ProductCreatedEvent;
-import com.isep.productcommandbootstrapper.command.ProductDeletedEvent;
-import com.isep.productcommandbootstrapper.command.ProductUpdatedEvent;
+import com.isep.bootstrapper.event.ProductCreatedEvent;
+import com.isep.bootstrapper.event.ProductDeletedEvent;
+import com.isep.bootstrapper.event.ProductUpdatedEvent;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

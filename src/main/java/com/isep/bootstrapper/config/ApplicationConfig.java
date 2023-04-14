@@ -1,4 +1,4 @@
-package com.isep.productcommandbootstrapper.config;
+package com.isep.bootstrapper.config;
 
 import java.util.UUID;
 
