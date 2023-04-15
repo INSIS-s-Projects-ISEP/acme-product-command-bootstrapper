@@ -52,8 +52,8 @@ public class RabbitmqConfig {
     }
 
     @Bean
-    public Queue productCreatedQueue(String instanceId){
-        return new Queue("product.product-created.product-command-bootstrapper", true, false, false);
+    public Queue productCreatedQueue(){
+        return new Queue("product.product-created.product-command-bootstrapper");
     }
 
     @Bean
@@ -68,8 +68,8 @@ public class RabbitmqConfig {
     }
 
     @Bean
-    public Queue productUpdatedQueue(String instanceId){
-        return new Queue("product.product-updated.product-command." + instanceId, true, true, true);
+    public Queue productUpdatedQueue(){
+        return new Queue("product.product-updated.product-command-bootstrapper");
     }
 
     @Bean
@@ -84,8 +84,8 @@ public class RabbitmqConfig {
     }
 
     @Bean
-    public Queue productDeletedQueue(String instanceId){
-        return new Queue("product.product-deleted.product-command." + instanceId, true, true, true);
+    public Queue productDeletedQueue(){
+        return new Queue("product.product-deleted.product-command-bootstrapper");
     }
 
     @Bean
@@ -100,8 +100,8 @@ public class RabbitmqConfig {
     }
 
     @Bean
-    public Queue rpcProductQueue(String instanceId){
-        return new Queue("rpc.product.product-command-bootstrapper", true, false, false);
+    public Queue rpcProductQueue(){
+        return new Queue("rpc.product.product-command-bootstrapper");
     }
 
     @Bean
