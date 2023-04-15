@@ -1,5 +1,7 @@
 package com.isep.bootstrapper.event;
 
+import java.util.UUID;
+
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 import lombok.AllArgsConstructor;
@@ -13,6 +15,6 @@ import lombok.Setter;
 public class ProductDeletedEvent {
 
     @TargetAggregateIdentifier
-    private Long productId;
+    private UUID productId;
 
 }

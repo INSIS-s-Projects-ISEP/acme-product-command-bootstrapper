@@ -1,5 +1,7 @@
 package com.isep.bootstrapper.event;
 
+import java.util.UUID;
+
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 import lombok.AllArgsConstructor;
@@ -13,7 +15,7 @@ import lombok.Setter;
 public class ProductCreatedEvent {
 
     @TargetAggregateIdentifier
-    private Long productId;
+    private UUID productId;
     private String sku;
     private String designation;
     private String description;
