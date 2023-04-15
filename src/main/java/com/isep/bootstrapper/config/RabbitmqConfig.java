@@ -96,7 +96,7 @@ public class RabbitmqConfig {
     // Bootstrapper
     @Bean
     public FanoutExchange rpcProductExchange(){
-        return new FanoutExchange("rpc.product");
+        return new FanoutExchange("rpc.product.product-command-bootstapper");
     }
 
     @Bean
