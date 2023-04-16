@@ -2,6 +2,7 @@ package com.isep.bootstrapper.messaging;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -72,6 +73,10 @@ public class ProductConsumer {
             commandGateway.send(productDeletedEvent);
             log.info("Product deleted: " + sku);
             channel.basicAck(tag, false);
+        }
+        catch (NoSuchElementException e){
+            log.error("Product doesn't exist: " + sku);
+            channel.basicReject(tag, false);
         }
         catch (Exception e) {
             log.error("Fail to delete product: " + sku);
